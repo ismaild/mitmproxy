@@ -512,8 +512,13 @@ class Request(HTTPMsg):
             modifications to make sure interception works properly.
         """
         FMT = '%s %s HTTP/1.1\r\n%s\r\n%s'
-        FMT_PROXY = '%s %s://%s:%s%s HTTP/1.1\r\n%s\r\n%s'
+        FMT_PROXY = '%s %s://%s:%s%s HTTP/1.1\r\n%s\r\n%s'		
+        print FMT, FMT_PROXY
+        print repr(FMT), repr(FMT_PROXY)
 
+        FMT = '%s %s HTTP/1.1\r\n%s\n%s'
+        FMT_PROXY = '%s %s://%s:%s%s HTTP/1.1\r\n%s\n%s'
+        print repr(FMT), repr(FMT_PROXY)
         headers = self.headers.copy()
         utils.del_all(
             headers,
